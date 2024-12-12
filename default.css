@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Fonte básica */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4; /* Cor de fundo clara */
+}
+
+/* Tipografia dos títulos */
+h1,
+h2,
+h3 {
+  font-family: "Georgia", serif; /* Fontes elegantes para os títulos */
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Cabeçalho e navegação */
+header {
+  background-color: #222; /* Cor de fundo escura */
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff2600; /* Cor que se destaca ao passar o mouse */
+}
+
+/* Seções (Main) */
+section {
+  min-height: 100vh; /* A seção ocupa 100% da altura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 3rem;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+#home {
+  position: relative;
+  height: 100vh; /* Garante que a seção ocupe 100% da altura da tela */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
+}
+
+#home video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz o vídeo cobrir toda a área da tela */
+  z-index: -1; /* Coloca o vídeo abaixo do conteúdo */
+}
+
+#home .mensagem {
+  position: absolute; /* Posiciona a mensagem sobre o vídeo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o conteúdo */
+  color: white;
+  text-align: center;
+  z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fundo escuro para destacar o conteúdo */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#home .mensagem h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+#home .mensagem p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+#home .mensagem button {
+  background-color: #e55347;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#home .mensagem button:hover {
+  background-color: #c7453b;
+}
+
+button {
+  background-color: #ff6347;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e55347;
+}
+
+/* Animação de FadeIn para o texto */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Para as seções com imagem de fundo */
+section:not(#home) {
+  background-size: cover;
+  background-position: center;
+}
+
+section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Cor escura com opacidade */
+  z-index: 1;
+}
+
+section .mensagem {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.345
+  ); /* Fundo sutil para melhorar contraste */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #002fff;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Formulários */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #007bff;
+}
+
+form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  .mensagem {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+/* Estilo para os cards de produtos */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.card-body .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e55347;
+  margin-bottom: 15px;
+}
+
+.card-body button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-body button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards {
+    gap: 15px;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
